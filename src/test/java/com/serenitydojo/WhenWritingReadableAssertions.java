@@ -10,13 +10,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class WhenWritingReadableAssertions {
 
     @Test
-    public void whenTwoNumbersAreEqual() {
+    public void whenThreeNumbersAreEqual() {
         int a = 5;
         int b = 10;
         int c = 20;
         int sum = a + b + c;
 
         // Check that the sum is 35
+      //  assertThat(sum).isEqualTo(35);
+
         assertThat(sum).isEqualTo(35);
     }
 
@@ -28,7 +30,9 @@ public class WhenWritingReadableAssertions {
         int sum = a + b + c;
 
         // Check that the sum is greater than 30
-        assertThat(sum).isGreaterThan(30);
+        // assertThat(sum).isGreaterThan(30);
+
+        assertThat(sum).isGreaterThan(34);
     }
 
     @Test
@@ -38,7 +42,9 @@ public class WhenWritingReadableAssertions {
         int sum = a + b;
 
         // Check that the sum is between 10 and 20
-        assertThat(sum).isBetween(10,20);
+        //assertThat(sum).isBetween(10,20);
+
+        assertThat(sum).isBetween(12, 16);
     }
 
   /*  @Test
@@ -54,8 +60,11 @@ public class WhenWritingReadableAssertions {
         String color = "red";
 
         // Check that the string has a value of 'red'
-        assertThat(color).isEqualTo("red");
+    //    assertThat(color).isEqualTo("red");
+
+    assertThat(color).isEqualTo("red");
     }
+
 
     @Test
     public void whenAStringIsEqualIgnoringCase() {
