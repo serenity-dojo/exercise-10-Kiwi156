@@ -2,6 +2,7 @@ package com.serenitydojo;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -47,13 +48,6 @@ public class WhenWritingReadableAssertions {
         assertThat(sum).isBetween(12, 16);
     }
 
-  /*  @Test
-    public void whenANumberIsCloseToAnotherValue() {
-        double roughlyOneHundred = 99;
-
-        // Check that the sum is within 10% of 100
-        assertThat(roughlyOneHundred) NOT SURE WHAT METHOD TO USE
-   */
 
     @Test
     public void whenAStringIsEqualToAnother() {
@@ -133,9 +127,17 @@ public class WhenWritingReadableAssertions {
 
     @Test
     public void whenAListContainsExactlyASetOfValuesInAnyOrder() {
-        List<String> colors = Arrays.asList("red","green","blue");
+       // List<String> colors = Arrays.asList("red","green","blue");
+
+        List<String> colors = new ArrayList<>(Arrays.asList("red", "green", "blue"));
+
+        colors.add("brown");
+        colors.remove("red");
+
 
         // Check that the list contains "red","blue" and "green" in any order
-        assertThat(colors).containsExactlyInAnyOrder("blue", "red", "green");
+        assertThat(colors).containsExactlyInAnyOrder("blue", "brown", "green");
+
+
     }
 }
